@@ -4,7 +4,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.annotation.NonNull;
 
 /**
- * @deprecated Use groupie-viewbinding
+ * @deprecated Use {@link com.xwray.groupie.databinding.GroupieDataBindingViewHolder}
  */
 @Deprecated
 public class GroupieViewHolder<T extends ViewDataBinding> extends com.xwray.groupie.GroupieViewHolder {
