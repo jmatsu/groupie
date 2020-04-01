@@ -14,6 +14,15 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
 public abstract class DataBindableItem<T extends ViewDataBinding> extends com.xwray.groupie.viewbinding.BindableItem<T> {
+
+    public DataBindableItem() {
+        super();
+    }
+
+    protected DataBindableItem(long id) {
+        super(id);
+    }
+
     @NonNull
     @Override
     protected T initializeViewBinding(@NonNull View view) {
@@ -25,5 +34,12 @@ public abstract class DataBindableItem<T extends ViewDataBinding> extends com.xw
     public void bind(@NonNull GroupieViewHolder<T> viewHolder, int position, @NonNull List<Object> payloads, @Nullable OnItemClickListener onItemClickListener, @Nullable OnItemLongClickListener onItemLongClickListener) {
         super.bind(viewHolder, position, payloads, onItemClickListener, onItemLongClickListener);
         viewHolder.binding.executePendingBindings();
+    }
+
+    @NonNull
+    @Override
+    public GroupieDataBindingViewHolder<T> createViewHolder(@NonNull View itemView) {
+        T binding = initializeViewBinding(itemView);
+        return new GroupieDataBindingViewHolder<>(binding);
     }
 }
