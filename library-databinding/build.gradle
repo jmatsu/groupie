@@ -35,7 +35,11 @@ android {
 
 dependencies {
     compileOnly project(':library')
+    compileOnly project(':library-viewbinding')
     compileOnly "androidx.recyclerview:recyclerview:1.1.0"
+    compileOnly("androidx.databinding:viewbinding:$viewbinding_version") {
+        transitive = false
+    }
     compileOnly("androidx.databinding:databinding-runtime:$databinding_version") {
         transitive = false
     }
