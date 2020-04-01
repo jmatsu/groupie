@@ -8,15 +8,15 @@ import android.view.View;
 import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
 import com.xwray.groupie.OnItemClickListener;
-import com.xwray.groupie.databinding.BindableItem;
-import com.xwray.groupie.databinding.GroupieViewHolder;
+import com.xwray.groupie.databinding.DataBindableItem;
+import com.xwray.groupie.databinding.GroupieDataBindingViewHolder;
 import com.xwray.groupie.example.databinding.R;
 import com.xwray.groupie.example.databinding.databinding.ItemCarouselBinding;
 
 /**
  * A horizontally scrolling RecyclerView, for use in a vertically scrolling RecyclerView.
  */
-public class CarouselItem extends BindableItem<ItemCarouselBinding> implements OnItemClickListener {
+public class CarouselItem extends DataBindableItem<ItemCarouselBinding> implements OnItemClickListener {
 
     private GroupAdapter adapter;
     private RecyclerView.ItemDecoration carouselDecoration;
@@ -28,8 +28,8 @@ public class CarouselItem extends BindableItem<ItemCarouselBinding> implements O
     }
 
     @Override
-    public GroupieViewHolder<ItemCarouselBinding> createViewHolder(@NonNull View itemView) {
-        GroupieViewHolder<ItemCarouselBinding> viewHolder = super.createViewHolder(itemView);
+    public GroupieDataBindingViewHolder<ItemCarouselBinding> createViewHolder(@NonNull View itemView) {
+        GroupieDataBindingViewHolder<ItemCarouselBinding> viewHolder = super.createViewHolder(itemView);
         RecyclerView recyclerView = viewHolder.binding.recyclerView;
         recyclerView.addItemDecoration(carouselDecoration);
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext(), LinearLayoutManager.HORIZONTAL, false));

@@ -5,14 +5,14 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import android.view.View;
 
-import com.xwray.groupie.databinding.BindableItem;
+import com.xwray.groupie.databinding.DataBindableItem;
 import com.xwray.groupie.example.databinding.MainActivity;
 import com.xwray.groupie.example.databinding.R;
 import com.xwray.groupie.example.databinding.databinding.ItemHeartCardBinding;
 
 import java.util.List;
 
-public class HeartCardItem extends BindableItem<ItemHeartCardBinding> {
+public class HeartCardItem extends DataBindableItem<ItemHeartCardBinding> {
 
     public static final String FAVORITE = "FAVORITE";
 

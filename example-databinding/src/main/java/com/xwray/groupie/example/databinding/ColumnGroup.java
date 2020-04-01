@@ -5,7 +5,8 @@ import androidx.annotation.NonNull;
 import com.xwray.groupie.Group;
 import com.xwray.groupie.GroupDataObserver;
 import com.xwray.groupie.Item;
-import com.xwray.groupie.databinding.BindableItem;
+import com.xwray.groupie.databinding.DataBindableItem;
+import com.xwray.groupie.databinding.DataBindableItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +16,9 @@ import java.util.List;
  */
 public class ColumnGroup implements Group {
 
-    private List<BindableItem> items = new ArrayList<>();
+    private List<DataBindableItem> items = new ArrayList<>();
 
-    public ColumnGroup(List<? extends BindableItem> items) {
+    public ColumnGroup(List<? extends DataBindableItem> items) {
         for (int i = 0; i < items.size(); i++) {
             // Rearrange items so that the adapter appears to arrange them in vertical columns
             int index;
@@ -29,7 +30,7 @@ public class ColumnGroup implements Group {
                 // meaning the second column's indices will all be increased by 1
                 if (items.size() % 2 == 1) index++;
             }
-            BindableItem trackItem = items.get(index);
+            DataBindableItem trackItem = items.get(index);
             this.items.add(trackItem);
         }
     }
@@ -46,7 +47,7 @@ public class ColumnGroup implements Group {
 
     @NonNull
     @Override
-    public BindableItem getItem(int position) {
+    public DataBindableItem getItem(int position) {
         return items.get(position);
     }
 

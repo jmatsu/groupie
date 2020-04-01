@@ -3,14 +3,14 @@ package com.xwray.groupie.example.databinding.item;
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 
-import com.xwray.groupie.databinding.BindableItem;
+import com.xwray.groupie.databinding.DataBindableItem;
 import com.xwray.groupie.example.databinding.R;
 import com.xwray.groupie.example.databinding.databinding.ItemCardBinding;
 
 import static com.xwray.groupie.example.databinding.MainActivity.INSET;
 import static com.xwray.groupie.example.databinding.MainActivity.INSET_TYPE_KEY;
 
-public class CardItem extends BindableItem<ItemCardBinding> {
+public class CardItem extends DataBindableItem<ItemCardBinding> {
 
     @ColorInt private int colorRes;
     private CharSequence text;
